@@ -2,12 +2,12 @@ Ejercicio de práctica para poner a prueba mi aprendizaje en Node con el framewo
 
 Reddit-clone
 ============
-** Obligatorio **
+**Obligatorio**
 
 - Publicar posts a manera de lista ordenada de + a - votos
 - Votación +/- para cada post
 
-** Opcional **
+**Opcional**
 
  - Comentarios para cada post
  - Comentarios a comentarios
