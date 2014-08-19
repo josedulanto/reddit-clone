@@ -19,3 +19,7 @@ Reddit-clone
  - SEO friendly URLs
  - Admin backend
  - etc, etc, etc
+
+**Deploy - Ambiente de desarrollo**
+
+ - [http://reddit-clone.meteor.com](http://reddit-clone.meteor.com)
