@@ -1,0 +1,11 @@
+.post {
+  border: 1px solid #d4d4d4;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.post-title { margin-left: 5px; }
+.post-trackback { color: #777; }
+
+.fa-chevron-up { color: green; }
+.fa-chevron-down { color: red; }
