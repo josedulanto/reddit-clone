@@ -8,3 +8,4 @@ insecure
 bootstrap-3
 coffeescript
 font-awesome
+iron-router
