@@ -4,6 +4,7 @@
     "font-awesome": {},
     "iron-router": {
       "version": "0.8.2"
-    }
+    },
+    "spin": {}
   }
 }
