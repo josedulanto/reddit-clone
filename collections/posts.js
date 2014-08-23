@@ -14,6 +14,7 @@ Meteor.methods({
 
     // pick out the whitelisted keys
     var post = _.extend(_.pick(postAttributes, 'url', 'title', 'message'), {
+      votes: 0,
       created_at: new Date().getTime(),
       updated_at: new Date().getTime()
     });
@@ -21,5 +22,17 @@ Meteor.methods({
     var postId = Posts.insert(post);
 
     return postId;
+  },
+  voteUp: function(id, vote) {
+    var post = Posts.findOne(id);
+    if(!post) {
+      throw new Meteor.Error(422, "Couldn't find the post");
+    } else {
+      Posts.update(post._id, {$set: { votes: post.votes+vote }}, function(error){
+        if(error) {
+          alert(error.reason);
+        }
+      })
+    }
   }
 });
