@@ -6,6 +6,7 @@
       "version": "0.8.2"
     },
     "spin": {},
-    "moment": {}
+    "moment": {},
+    "accounts-ui-bootstrap-dropdown": {}
   }
 }
