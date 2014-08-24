@@ -8,8 +8,7 @@
         "version": "0.8.2"
       },
       "spin": {},
-      "moment": {},
-      "accounts-ui-bootstrap-dropdown": {}
+      "moment": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -36,11 +35,6 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.8.1",
         "commit": "722ea63783d594341023836b7d418ab2567dab8c"
-      },
-      "accounts-ui-bootstrap-dropdown": {
-        "git": "https://github.com/erobit/meteor-accounts-ui-bootstrap-dropdown.git",
-        "tag": "v0.8.3",
-        "commit": "a7af8a52e4e74db020a69b158a8f992797b8b0b0"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",
