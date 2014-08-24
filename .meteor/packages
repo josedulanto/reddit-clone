@@ -12,3 +12,4 @@ iron-router
 spin
 moment
 accounts-ui-bootstrap-dropdown
+accounts-password
