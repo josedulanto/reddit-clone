@@ -1,5 +1,6 @@
 Template.postEdit.events({
-	'submit form': function(e){
+	
+	'submit form': function(e) {
 		e.preventDefault();
 		
 		var currentPostId = this._id;
@@ -12,14 +13,14 @@ Template.postEdit.events({
 		
 		Posts.update(currentPostId, {$set: postProperties}, function(error){
 			if(error) {
-				// display error
 				alert(error.reason);
 			} else {
 				Router.go('postShow', {_id: currentPostId});
 			}
 		})
 	},
-	'click .delete': function(e){
+	
+	'click .delete': function(e) {
 		e.preventDefault();
 		
 		if(confirm("Are you sure you want to delete this post?")){
@@ -28,4 +29,5 @@ Template.postEdit.events({
 			Router.go('postsList');
 		}
 	}
+	
 });
