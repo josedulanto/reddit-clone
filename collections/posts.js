@@ -6,8 +6,8 @@ Posts.allow({
 });
 
 Posts.deny({
-  update: function(userId, post, fieldNames) {
-    return (_.whitout(fieldNames, title, url, message).length > 0);
+  update: function(userId, post, fields) {
+    return(_.without(fields, 'title', 'url', 'message').length > 0);
   }
 });
 
