@@ -2,21 +2,28 @@ Posts = new Meteor.Collection('posts');
 
 Meteor.methods({
   post: function(postAttributes) {
-    postWithSameLink = Posts.findOne({url: postAttributes.url});
+    var user = Meteor.user();
+    var postWithSameLink = Posts.findOne({url: postAttributes.url});
 
-    // ensure the post has a title
+    // validation - check if the user is signed in
+    if(!user)
+      throw new Meteor.Error(401, "You need to login to create a post");
+
+    // validation - ensure the post has a title
     if (!postAttributes.title)
       throw new Meteor.Error(422, 'Please complete the fields');
 
-    // check that there are no previous posts with the same link
+    // validation - check that there are no previous posts with the same link
     if (postAttributes.url && postWithSameLink)
       throw new Meteor.Error(302, 'This URL has already been posted', postWithSameLink._id);
 
     // pick out the whitelisted keys
     var post = _.extend(_.pick(postAttributes, 'url', 'title', 'message'), {
+      userId: user._id,
+      author: user.username,
       votes: 0,
-      created_at: new Date().getTime(),
-      updated_at: new Date().getTime()
+      createdAt: new Date().getTime(),
+      updatedAt: new Date().getTime()
     });
 
     var postId = Posts.insert(post);
