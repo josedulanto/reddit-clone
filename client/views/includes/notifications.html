@@ -1,0 +1,11 @@
+<template name="notifications">
+	<div class="col-xs-12">
+		{{#each notifications}}
+			{{>notification}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="notification">
+	<div class="alert alert-{{kind}}">{{message}}</div>
+</template>
