@@ -51,7 +51,7 @@ if (Posts.find().count() === 0) {
     updatedAt: moment().subtract(3, 'days')
   });
   
-  var posts = Meteor.posts.fetch();
+  var posts = Posts.find().fetch();
   
   // Create comments
   Comments.insert({
