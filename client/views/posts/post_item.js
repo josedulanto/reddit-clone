@@ -36,7 +36,3 @@ Template.postItem.events({
     })
   }
 });
-
-Template.postItem.formatDate = function(timestamp){
-  return moment(timestamp).fromNow();
-}
