@@ -6,7 +6,7 @@
     </span>
     <span class="label label-default">{{votesCount}}</span>
     <a href="{{pathFor 'postShow'}}" title="{{url}}" class="post-title">{{title}}</a>
-    <small class="post-trackback">{{formatDate created_at}} | {{trackback}}</small>
+    <small class="post-trackback">{{formatDate createdAt}} | {{trackback}}</small>
     {{#if ownPost}}
       <a href="{{pathFor 'postEdit'}}" title="{{url}}" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></a>
     {{/if}}
