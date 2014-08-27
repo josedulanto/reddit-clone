@@ -1,14 +1,27 @@
 <template name="postItem">
   <div class="row-fluid post">
-    <span>
-      <a href="#" class="btn btn-default btn-sm fa fa-chevron-up vote-up"></a>
-      <a href="#" class="btn btn-default btn-sm fa fa-chevron-down vote-down"></a>
-    </span>
-    <span class="label label-default">{{votesCount}}</span>
-    <a href="{{pathFor 'postShow'}}" title="{{url}}" class="post-title">{{title}}</a>
-    <small class="post-trackback">{{formatDate createdAt}} | {{trackback}}</small>
-    {{#if ownPost}}
-      <a href="{{pathFor 'postEdit'}}" title="{{url}}" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></a>
-    {{/if}}
+    <div class="inline-block pull-left vote-controls">
+      <a href="#" class="btn btn-default btn-xs fa fa-chevron-up vote-up"></a>
+      <a href="#" class="btn btn-default btn-xs fa fa-chevron-down vote-down"></a>
+      <span class="btn-disabled btn-default btn-xs">{{votesCount}}</span>
+    </div>
+    <div class="inline-block">
+      <a href="{{url}}" title="{{url}}" class="post-title" target="_blank">{{title}}</a>
+      <div>
+        <small>
+          <span class="post-created-at">{{formatDate createdAt}}</span>
+          by <span class="post-author">{{author}}</span>, 
+          <span class="post-trackback">
+            via <a href="http://{{trackback}}" target="_blank">{{trackback}}</a>
+          </span>
+          | <span class="post-comments">
+              <a href="{{pathFor 'postShow'}}">{{commentsCount}} comments</a>
+            </span>
+        </small>
+      </div>
+      {{#if ownPost}}
+        <a href="{{pathFor 'postEdit'}}" title="{{url}}" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></a>
+      {{/if}}
+    </div>
   </div>
 </template>
