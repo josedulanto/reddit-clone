@@ -12,3 +12,6 @@ ul.comments li small { color: #999; }
 
 /* Utilities */
 .inline-block { display: inline-block; }
+.align-right { text-align: right; }
+.align-center { text-align: center; }
+.align-left { text-align: left; }
