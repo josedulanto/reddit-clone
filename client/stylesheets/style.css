@@ -1,15 +1,13 @@
-.post {
-  border: 1px solid #d4d4d4;
-  padding: 10px;
-  margin-bottom: 10px;
-}
+body { background: #f0f0f0; }
+
+.post { border: 1px solid #e7e7e7; padding: 10px; margin-bottom: 10px; background-color: #f8f8f8; }
 
 .vote-controls { margin-right: 10px; }
 .vote-up { color: green; line-height: 36px !important; }
 .vote-down { color: red; line-height: 36px !important; }
 
 ul.comments { padding-left: 10px; }
-ul.comments li { border: 1px solid #d4d4d4; margin-top: 10px; padding: 10px; }
+ul.comments li { border: 1px solid #e7e7e7; background-color: #f8f8f8; margin-top: 10px; padding: 10px; }
 ul.comments li small { color: #999; }
 
 /* Utilities */
