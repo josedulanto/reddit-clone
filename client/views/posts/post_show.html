@@ -1,7 +1,9 @@
 <template name="postShow">
   <div class="col-xs-12">
     {{> postItem}}
-    <hr/>
+    {{#if currentUser}}
+      {{>commentNew}}
+    {{/if}}
     <h4>Comments</h4>
     <ul class='comments list-unstyled'>
       {{#each comments}}
