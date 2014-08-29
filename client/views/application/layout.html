@@ -12,11 +12,13 @@
         <a class="navbar-brand" href="{{pathFor 'postsList'}}">Reddit Clone</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        {{ #if currentUser }}
-          <li><a href="{{pathFor 'postNew'}}">New post</a></li>
-        {{ /if }}
         {{>loginButtons }}
       </ul>
+      {{ #if currentUser }}
+        <div id="nav-top" class="nav navbar-nav navbar-right">
+          <a href="{{pathFor 'postNew'}}" class="btn btn-primary navbar-btn">New post</a>
+        </div>
+      {{ /if }}
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container-fluid {{classHook}}">

@@ -1,5 +1,7 @@
 body { background: #f0f0f0; }
 
+#nav-top { margin-right: 10px; }
+
 .post { border: 1px solid #e7e7e7; padding: 10px; margin-bottom: 10px; background-color: #f8f8f8; }
 
 .vote-controls { margin-right: 10px; }
