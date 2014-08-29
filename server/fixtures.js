@@ -20,6 +20,7 @@ if (Posts.find().count() === 0) {
     author: smith.profile.name,
     url: 'http://techcrunch.com/2014/08/25/amazon-will-officially-acquire-twitch/',
     votes: 0,
+    commentsCount: 2,
     createdAt: moment(),
     updatedAt: moment()
   });
@@ -29,6 +30,7 @@ if (Posts.find().count() === 0) {
     author: doe.profile.name,
     url: 'http://techcrunch.com/2014/08/19/traction-launch/',
     votes: 0,
+    commentsCount: 0,
     createdAt: moment().subtract(1, 'days'),
     updatedAt: moment().subtract(1, 'days')
   });
@@ -38,6 +40,7 @@ if (Posts.find().count() === 0) {
     author: smith.profile.name,
     url: 'http://techcrunch.com/2014/08/19/google-launches-photo-sphere-camera-on-ios/',
     votes: 0,
+    commentsCount: 0,
     createdAt: moment().subtract(2, 'days'),
     updatedAt: moment().subtract(2, 'days')
   });
@@ -47,6 +50,7 @@ if (Posts.find().count() === 0) {
     author: doe.profile.name,
     url: 'http://techcrunch.com/2014/08/19/this-is-the-worst-app-in-the-world/',
     votes: 0,
+    commentsCount: 0,
     createdAt: moment().subtract(3, 'days'),
     updatedAt: moment().subtract(3, 'days')
   });
