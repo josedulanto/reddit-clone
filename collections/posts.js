@@ -33,6 +33,7 @@ Meteor.methods({
       userId: user._id,
       author: user.username,
       votes: 0,
+      commentsCount: 0,
       createdAt: new Date().getTime(),
       updatedAt: new Date().getTime()
     });

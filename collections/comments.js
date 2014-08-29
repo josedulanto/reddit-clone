@@ -19,6 +19,8 @@ Meteor.methods({
       createdAt: moment()
     });
     
+    Posts.update(comment.postId, {$inc: { commentsCount: 1 }});
+    
     return Comments.insert(comment);
   }
 });

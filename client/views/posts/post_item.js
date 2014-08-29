@@ -13,9 +13,6 @@ Template.postItem.helpers({
       v = 0;
     }
     return v;
-  },
-  commentsCount: function() {
-    return Comments.find({postId: this._id}).count();
   }
 })
 
