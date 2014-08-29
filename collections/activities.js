@@ -2,11 +2,11 @@ Activities = new Meteor.Collection('activities');
 
 Activities.allow({
   update: ownsDocument
-})
+});
 
 activity = function(comment) {
   var post = Posts.findOne(comment.postId);
-  if comment.userId !== post.userId {  
+  if(comment.userId !== post.userId) {
     var activityAttributes = {
       userId: post.userId,
       commentId: comment._id,
