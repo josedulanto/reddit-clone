@@ -19,8 +19,15 @@ Meteor.methods({
       createdAt: moment()
     });
     
+    // Update post incrementing commentsCount by 1
     Posts.update(comment.postId, {$inc: { commentsCount: 1 }});
     
-    return Comments.insert(comment);
+    // Save the id to return it later
+    comment._id = Comments.insert(comment);
+    
+    // Create activity for this comment
+    activity(comment);
+    
+    return comment._id;
   }
 });
