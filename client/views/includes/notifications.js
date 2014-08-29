@@ -7,6 +7,6 @@ Template.notifications.helpers({
 Template.notifications.rendered = function() {
 	var notification = this.data;
 	Meteor.defer(function(){
-		Notifications.update(this._id, {$set: {seen: true}});
+		Notifications.update(this._id, {$set: {read: true}});
 	})
 }

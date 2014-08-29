@@ -1,9 +1,9 @@
 Notifications = new Meteor.Collection(null);
 
 notify = function(message, kind){
-	Notifications.insert({message: message, kind: kind, seen: false});
+	Notifications.insert({message: message, kind: kind, read: false});
 }
 
 notifyClear = function(){
-	Notifications.remove({seen: true});
+	Notifications.remove({read: true});
 }
