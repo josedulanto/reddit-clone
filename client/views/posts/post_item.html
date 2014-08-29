@@ -1,11 +1,14 @@
 <template name="postItem">
   <div class="row-fluid post">
-    <div class="inline-block pull-left vote-controls">
+    <div class="inline-block pull-left align-center vote-controls">
       <a href="#" class="btn btn-default btn-xs fa fa-chevron-up vote-up"></a>
-      <span class="btn-disabled btn-default btn-xs">{{votesCount}}</span>
+      <span>{{votesCount}}</span>
       <a href="#" class="btn btn-default btn-xs fa fa-chevron-down vote-down"></a>
     </div>
-    <div class="inline-block">
+    <div class="post-details">
+      {{#if ownPost}}
+        <a href="{{pathFor 'postEdit'}}" title="{{url}}" class="btn btn-default btn-sm pull-right post-edit"><i class="fa fa-pencil"></i></a>
+      {{/if}}
       <a href="{{url}}" title="{{url}}" class="post-title" target="_blank">{{title}}</a>
       <div>
         <small>
@@ -19,9 +22,6 @@
             </span>
         </small>
       </div>
-      {{#if ownPost}}
-        <a href="{{pathFor 'postEdit'}}" title="{{url}}" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></a>
-      {{/if}}
     </div>
   </div>
 </template>

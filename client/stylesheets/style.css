@@ -3,10 +3,15 @@ body { background: #f0f0f0; }
 #nav-top { margin-right: 10px; }
 
 .post { border: 1px solid #e7e7e7; padding: 10px; margin-bottom: 10px; background-color: #f8f8f8; }
+.post-details { min-height: 40px; }
+.post-actions { position: relative; top: -34px; }
+.post .btn.post-edit { margin-top: 5px; }
 
-.vote-controls { margin-right: 10px; }
-.vote-up { color: green; line-height: 36px !important; }
-.vote-down { color: red; line-height: 36px !important; }
+.vote-controls { margin-right: 10px; width: 30px; position: relative; top: -6px; }
+.vote-controls span { font-size: 12px; line-height: 5px; font-weight: bold; position: relative; top: -4px; }
+.vote-up, .vote-down { line-height: 10px !important; width: 30px; }
+.vote-up { color: green; }
+.vote-down { color: #E54028; position: relative; top: -10px; }
 
 ul.comments { padding-left: 10px; }
 ul.comments li { border: 1px solid #e7e7e7; background-color: #f8f8f8; margin-top: 10px; padding: 10px; }
