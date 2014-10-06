@@ -20,7 +20,10 @@
             {{> activities}}
           </li>
         </ul>
-        <a href="{{pathFor 'postNew'}}" class="btn btn-primary navbar-btn pull-right">New post</a>
+        <div class="btn-group pull-right">
+          <a href="{{pathFor 'postNew'}}" class="btn btn-primary navbar-btn">New post</a>
+          <a href="{{pathFor 'userProfile'}}" class="btn btn-default navbar-btn">My profile</a>
+        </div>
       {{ /if }}
     </div><!-- /.container-fluid -->
   </nav>
