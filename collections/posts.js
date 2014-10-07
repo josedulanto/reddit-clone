@@ -48,7 +48,7 @@ Meteor.methods({
     
     // validation - check if the user is signed in
     if(!user)
-      throw new Meteor.Error(401, "You need to login to create a post");
+      throw new Meteor.Error(401, "You need to login to vote");
       
     if(!post) {
       throw new Meteor.Error(422, "Couldn't find the post");
