@@ -6,10 +6,9 @@
 standard-app-packages
 coffeescript
 natestrauser:font-awesome@4.1.0
-cmather:iron-router@=0.8.2
 sacha:spin@2.0.4
 mrt:moment@2.8.1
 accounts-password
 ian:bootstrap-3
 ian:accounts-ui-bootstrap-3
-
+mrt:iron-router-progress
