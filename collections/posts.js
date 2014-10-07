@@ -44,6 +44,12 @@ Meteor.methods({
   },
   voteUp: function(id, vote) {
     var post = Posts.findOne(id);
+    var user = Meteor.user();
+    
+    // validation - check if the user is signed in
+    if(!user)
+      throw new Meteor.Error(401, "You need to login to create a post");
+      
     if(!post) {
       throw new Meteor.Error(422, "Couldn't find the post");
     } else {
