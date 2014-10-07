@@ -1,9 +1,13 @@
 <template name="postItem">
   <div class="row-fluid post">
     <div class="inline-block pull-left align-center vote-controls">
-      <a href="#" class="btn btn-default btn-xs fa fa-chevron-up vote-up"></a>
-      <span>{{votesCount}}</span>
-      <a href="#" class="btn btn-default btn-xs fa fa-chevron-down vote-down"></a>
+      {{# if currentUser }}
+        <a href="#" class="btn btn-default btn-xs fa fa-chevron-up vote-up"></a>
+      {{/ if}}
+      <span class="votes-count">{{votesCount}}</span>
+      {{# if currentUser }}
+        <a href="#" class="btn btn-default btn-xs fa fa-chevron-down vote-down"></a>
+      {{/ if}}
     </div>
     <div class="post-details">
       {{#if ownPost}}

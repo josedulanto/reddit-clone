@@ -8,7 +8,8 @@ body { background: #f0f0f0; }
 .post .btn.post-edit { margin-top: 5px; }
 
 .vote-controls { margin-right: 10px; width: 30px; position: relative; top: -6px; }
-.vote-controls span { font-size: 12px; line-height: 5px; font-weight: bold; position: relative; top: -4px; }
+.vote-controls .votes-count { font-weight: bold; font-size: 40px; line-height: 50px; }
+.vote-up + .votes-count { font-size: 12px; line-height: 5px; font-weight: bold; position: relative; top: -4px; }
 .vote-up, .vote-down { line-height: 10px !important; width: 30px; }
 .vote-up { color: green; }
 .vote-down { color: #E54028; position: relative; top: -10px; }
