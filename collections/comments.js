@@ -16,7 +16,7 @@ Meteor.methods({
     comment = _.extend(_.pick(commentAttributes, 'postId', 'body'), {
       userId: user._id,
       author: user.profile.name,
-      createdAt: moment()
+      createdAt: moment().format("X")
     });
     
     // Update post incrementing commentsCount by 1

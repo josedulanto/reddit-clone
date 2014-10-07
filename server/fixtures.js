@@ -22,8 +22,8 @@ if (Posts.find().count() === 0) {
     votes: 0,
     voters: [],
     commentsCount: 0,
-    createdAt: moment(),
-    updatedAt: moment()
+    createdAt: moment().format("X"),
+    updatedAt: moment().format("X")
   });
   Posts.insert({
     title: 'Amazon’s Twitch Acquisition Is Official',
@@ -33,8 +33,8 @@ if (Posts.find().count() === 0) {
     votes: 0,
     voters: [],
     commentsCount: 2,
-    createdAt: moment().subtract(30, 'minutes'),
-    updatedAt: moment().subtract(30, 'minutes')
+    createdAt: moment().subtract(30, 'minutes').format("X"),
+    updatedAt: moment().subtract(30, 'minutes').format("X")
   });
   Posts.insert({
     title: 'Y Combinator-Backed Traction Is A Marketplace Connecting Brands With Freelance Marketers',
@@ -44,8 +44,8 @@ if (Posts.find().count() === 0) {
     votes: 0,
     voters: [],
     commentsCount: 0,
-    createdAt: moment().subtract(1, 'days'),
-    updatedAt: moment().subtract(1, 'days')
+    createdAt: moment().subtract(1, 'days').format("X"),
+    updatedAt: moment().subtract(1, 'days').format("X")
   });
   Posts.insert({
     title: 'Google Launches Photo Sphere Camera App On iOS',
@@ -55,8 +55,8 @@ if (Posts.find().count() === 0) {
     votes: 0,
     voters: [],
     commentsCount: 0,
-    createdAt: moment().subtract(2, 'days'),
-    updatedAt: moment().subtract(2, 'days')
+    createdAt: moment().subtract(2, 'days').format("X"),
+    updatedAt: moment().subtract(2, 'days').format("X")
   });
   Posts.insert({
     title: 'This Is The Worst App In The World',
@@ -66,8 +66,8 @@ if (Posts.find().count() === 0) {
     votes: 0,
     voters: [],
     commentsCount: 0,
-    createdAt: moment().subtract(3, 'days'),
-    updatedAt: moment().subtract(3, 'days')
+    createdAt: moment().subtract(3, 'days').format("X"),
+    updatedAt: moment().subtract(3, 'days').format("X")
   });
   
   var posts = Posts.find().fetch();
@@ -78,13 +78,13 @@ if (Posts.find().count() === 0) {
     userId: doe._id,
     author: doe.profile.name,
     body: "I'm officially 'not with it'. I went to twitch, loaded a few pages and found myself watching a live stream of someone playing minecraft, as if playing minecraft wasn't bad enough. WTF.",
-    createdAt: moment().add(10, 'minutes')
+    createdAt: moment().add(10, 'minutes').format("X")
   });
   Comments.insert({
     postId: posts[0]._id,
     userId: smith._id,
     author: smith.profile.name,
     body: "That's why I prefer Diablo 3... FTW!",
-    createdAt: moment().add(13, 'minutes')
+    createdAt: moment().add(13, 'minutes').format("X")
   });
 }

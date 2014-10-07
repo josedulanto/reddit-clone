@@ -35,8 +35,8 @@ Meteor.methods({
       votes: 0,
       voters: [],
       commentsCount: 0,
-      createdAt: new Date().getTime(),
-      updatedAt: new Date().getTime()
+      createdAt: moment().format("X"),
+      updatedAt: moment().format("X")
     });
 
     var postId = Posts.insert(post);
