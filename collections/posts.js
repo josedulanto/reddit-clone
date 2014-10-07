@@ -33,6 +33,7 @@ Meteor.methods({
       userId: user._id,
       author: user.username,
       votes: 0,
+      voters: [],
       commentsCount: 0,
       createdAt: new Date().getTime(),
       updatedAt: new Date().getTime()
@@ -42,7 +43,7 @@ Meteor.methods({
 
     return postId;
   },
-  voteUp: function(id, vote) {
+  vote: function(id, vote) {
     var post = Posts.findOne(id);
     var user = Meteor.user();
     
@@ -53,11 +54,17 @@ Meteor.methods({
     if(!post) {
       throw new Meteor.Error(422, "Couldn't find the post");
     } else {
-      Posts.update(post._id, {$set: { votes: post.votes+vote }}, function(error){
-        if(error) {
-          alert(error.reason);
-        }
-      })
+      if(vote > 0){
+        Posts.update({_id: post._id, voters: {$ne: user._id}}, {$addToSet: {voters: user._id}, $inc: {votes: vote}}, function(error){
+          if(error)
+            throw new Meteor.Error(422, error.reason);
+        })
+      } else {
+        Posts.update({_id: post._id, voters: {$in: [user._id]}}, {$pull: {voters: user._id}, $inc: {votes: vote}}, function(error){
+          if(error)
+            throw new Meteor.Error(422, error.reason);
+        })
+      }
     }
   }
 });

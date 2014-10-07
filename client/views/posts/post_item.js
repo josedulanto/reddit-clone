@@ -20,7 +20,7 @@ Template.postItem.events({
     
   'click .vote-up': function(e) {
     e.preventDefault();
-    Meteor.call('voteUp', this._id, 1, function(error, id) {
+    Meteor.call('vote', this._id, 1, function(error, id) {
       if (error)
         return notify(error.reason, 'danger');
     });
@@ -30,7 +30,7 @@ Template.postItem.events({
     if(this.votes === 0) {
       return false;
     } else {
-      Meteor.call('voteUp', this._id, -1, function(error, id) {
+      Meteor.call('vote', this._id, -1, function(error, id) {
         if (error)
           return notify(error.reason, 'danger');
       })

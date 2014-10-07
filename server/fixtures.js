@@ -2,27 +2,39 @@ if (Posts.find().count() === 0) {
   
   // Create users John Doe and John Smith
   var doeId = Meteor.users.insert({
-    profile: { name: 'John Doe' }
+    profile: { name: 'John Doe', firstName: 'John', lastName: 'Doe' }
   });
   
   var doe = Meteor.users.findOne(doeId);
   
   var smithId = Meteor.users.insert({
-    profile: {name: 'John Smith'}
+    profile: { name: 'John Smith', firstName: 'John', lastName: 'Smith' }
   });
   
   var smith = Meteor.users.findOne(smithId);
   
   // Create posts
   Posts.insert({
+    title: 'Hacked Screenshots Show Friend-To-Friend Payments Feature Hidden In Facebook Messenger',
+    userId: smith._id,
+    author: smith.profile.name,
+    url: 'http://techcrunch.com/2014/10/05/pay-with-facebook-messenger/',
+    votes: 0,
+    voters: [],
+    commentsCount: 0,
+    createdAt: moment(),
+    updatedAt: moment()
+  });
+  Posts.insert({
     title: 'Amazon’s Twitch Acquisition Is Official',
     userId: smith._id,
     author: smith.profile.name,
     url: 'http://techcrunch.com/2014/08/25/amazon-will-officially-acquire-twitch/',
     votes: 0,
+    voters: [],
     commentsCount: 2,
-    createdAt: moment(),
-    updatedAt: moment()
+    createdAt: moment().subtract(30, 'minutes'),
+    updatedAt: moment().subtract(30, 'minutes')
   });
   Posts.insert({
     title: 'Y Combinator-Backed Traction Is A Marketplace Connecting Brands With Freelance Marketers',
@@ -30,6 +42,7 @@ if (Posts.find().count() === 0) {
     author: doe.profile.name,
     url: 'http://techcrunch.com/2014/08/19/traction-launch/',
     votes: 0,
+    voters: [],
     commentsCount: 0,
     createdAt: moment().subtract(1, 'days'),
     updatedAt: moment().subtract(1, 'days')
@@ -40,6 +53,7 @@ if (Posts.find().count() === 0) {
     author: smith.profile.name,
     url: 'http://techcrunch.com/2014/08/19/google-launches-photo-sphere-camera-on-ios/',
     votes: 0,
+    voters: [],
     commentsCount: 0,
     createdAt: moment().subtract(2, 'days'),
     updatedAt: moment().subtract(2, 'days')
@@ -50,6 +64,7 @@ if (Posts.find().count() === 0) {
     author: doe.profile.name,
     url: 'http://techcrunch.com/2014/08/19/this-is-the-worst-app-in-the-world/',
     votes: 0,
+    voters: [],
     commentsCount: 0,
     createdAt: moment().subtract(3, 'days'),
     updatedAt: moment().subtract(3, 'days')
