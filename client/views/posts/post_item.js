@@ -27,9 +27,13 @@ Template.postItem.events({
   },
   'click .vote-down': function(e) {
     e.preventDefault();
-    Meteor.call('voteUp', this._id, -1, function(error, id) {
-      if (error)
-        return notify(error.reason, 'danger');
-    })
+    if(this.votes === 0) {
+      return false;
+    } else {
+      Meteor.call('voteUp', this._id, -1, function(error, id) {
+        if (error)
+          return notify(error.reason, 'danger');
+      })
+    }
   }
 });
