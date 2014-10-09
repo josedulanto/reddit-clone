@@ -2,7 +2,7 @@ body { background: #f0f0f0; }
 
 #nav-top { margin-right: 10px; }
 
-.post { border: 1px solid #e7e7e7; padding: 10px; margin-bottom: 10px; background-color: #f8f8f8; }
+.post { border: 1px solid #e7e7e7; padding: 10px; margin-bottom: 10px; background-color: #f8f8f8; position:relative; transition:all 300ms 0ms ease-in; }
 .post-details { min-height: 40px; }
 .post-actions { position: relative; top: -34px; }
 .post .btn.post-edit { margin-top: 5px; }

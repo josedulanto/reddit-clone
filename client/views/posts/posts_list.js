@@ -1,0 +1,1 @@
+Template.postsList.helpers({ postsWithRank: function() {  this.posts.rewind(); // Whenever you use a cursor with forEach(), map(), or fetch(), you’ll need to rewind the cursor afterwards before it’s ready to be used again  return this.posts.map(function(post, index, cursor) {    post._rank = index;    return post; });  }});
